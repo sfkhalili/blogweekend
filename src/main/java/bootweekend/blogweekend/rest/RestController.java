@@ -5,11 +5,12 @@ import bootweekend.blogweekend.entity.User;
 import bootweekend.blogweekend.services.PostService;
 import bootweekend.blogweekend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@org.springframework.web.bind.annotation.RestController("/")
+@Controller("/")
 public class RestController {
 
     @Autowired
@@ -42,12 +43,13 @@ public class RestController {
         userService.saveUser(user);
     }
 
-    @RequestMapping("/getAllPosts")
-    public String getAllPostsByUserName(@RequestParam String username, Model model){
 
+    //http://localhost:9080/getAllPosts?username=elham
+    @GetMapping("/getAllPosts")
+    public String getAllPostsByUserName(@RequestParam String username, Model model){
         List<Post> listPost= postService.getAllByUserName(username);
         model.addAttribute("list",listPost);
-        return "listPosts";
+        return "listPostsssssssssssssss";
 
     }
 
