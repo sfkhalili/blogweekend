@@ -3,7 +3,7 @@ package bootweekend.blogweekend.entity;
         import javax.persistence.*;
 
 @Entity
-@Table(name = "comment")
+@Table(name = "comment", schema = "blogweekend")
 public class Comment {
 
     private Long id;

@@ -15,8 +15,8 @@ public class RestController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private PostService postService;
+//    @Autowired
+//    private PostService postService;
 
     public RestController() {
     }
@@ -45,8 +45,8 @@ public class RestController {
     @RequestMapping("/getAllPosts")
     public String getAllPostsByUserName(@RequestParam String username, Model model){
 
-        List<Post> listPost= postService.getAllByUserName(username);
-        model.addAttribute("list",listPost);
+      //  List<Post> listPost= postService.getAllByUserName(username);
+        //model.addAttribute("list",listPost);
         return "listposts";
 
     }
