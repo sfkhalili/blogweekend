@@ -8,6 +8,6 @@ public interface PostService {
 
     public void save(Post post);
     public void delete(Post post);
-    public List getAllByUserName(String userName);
+    public List<Post> getAllByUserName(String userName);
 
 }

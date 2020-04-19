@@ -5,6 +5,7 @@ import bootweekend.blogweekend.entity.User;
 import bootweekend.blogweekend.services.PostService;
 import bootweekend.blogweekend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class RestController {
 
     @Autowired
     private UserService userService;
+
     @Autowired
     private PostService postService;
 
@@ -41,9 +43,11 @@ public class RestController {
     }
 
     @RequestMapping("/getAllPosts")
-    public List<Post> getAllPostsByUserName(@RequestParam String username){
+    public String getAllPostsByUserName(@RequestParam String username, Model model){
 
-        return postService.getAllByUserName(username);
+        List<Post> listPost= postService.getAllByUserName(username);
+        model.addAttribute("list",listPost);
+        return "listposts";
 
     }
 
