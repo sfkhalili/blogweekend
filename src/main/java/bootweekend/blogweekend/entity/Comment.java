@@ -3,7 +3,7 @@ package bootweekend.blogweekend.entity;
         import javax.persistence.*;
 
 @Entity
-@Table(name = "comment", schema = "blogweekend")
+@Table(name = "COMMENTS", schema = "blogweekend")
 public class Comment {
 
     private Long id;
@@ -14,7 +14,7 @@ public class Comment {
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "comment_id")
+    @Column(name = "commentid")
     public Long getId() {
         return id;
     }

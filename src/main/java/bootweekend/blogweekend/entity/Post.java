@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "post" , schema ="blogweekend")
+@Table(name = "POST" , schema ="blogweekend")
 public class Post {
 
     private Long postId;
